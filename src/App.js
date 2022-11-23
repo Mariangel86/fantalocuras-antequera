@@ -1,13 +1,20 @@
+import React from 'react';
 import './App.css';
 import Header from './componentes/Header';
 import NavBar from './componentes/NavBar';
+import ContadorFuncional from './componentes/ContadorFuncional';
+import ItemLista from './componentes/ItemListContainer';
 
 const App = () => {
+
+//const locunum = 5;
+
   return (
     <div className='App'>
-      <Header/>
       <NavBar/>
-      <h2>Hola Profe Coder</h2>
+      <Header/>
+      <ItemLista/>
+      <ContadorFuncional />
     </div>
   );
 }

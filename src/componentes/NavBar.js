@@ -1,27 +1,34 @@
-import React from "react"
-import './Header.css'
-import { Alert } from "reactstrap"
+import React from "react";
+import './NavBar.css';
+import Logo from '../assets/Locuraslogo.jpg';
+import Carrito from "./Cartwidget";
+
 const NavBar = () => {
 
     return (
-        <Alert>
+
 <nav>
-    <h1>Menu</h1>
-      <ul>
-           <li>
-            <a href=''> MUGS</a>
-            </li>
-            <li>
-            <a href=''> ANIME</a>
-            </li>
-            <li>
-            <a href=''> FANTASY</a>
-            </li>
+    <img src= {Logo} alt='Logo'/>
+
+        <h1>Fantalocuras</h1>
+        
+
+     <h1>Menu</h1>
+
+        <ul>
+            <li>MUGS</li>
+            <li>ANIME</li>
+            <li>FANTASY </li>
            
-            </ul>
+         </ul>
+
+        <Carrito/>
+
+        <button className='header__button'>
+            Comienza la FantaLocura
+            </button>
         </nav>
-        </Alert>
-        )
+        );
 
     }
 
