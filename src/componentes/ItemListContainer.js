@@ -13,7 +13,7 @@ return(
 const ContenedorLista = styled.div`
     {color: blue;
     width: 100%;
-    box-sizing: border-box;
+    padding: 14px
     }`
 
 export default ItemLista;
