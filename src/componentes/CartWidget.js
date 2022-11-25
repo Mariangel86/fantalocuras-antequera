@@ -8,6 +8,7 @@ const Boton= styled.button`
     margin-left: 8rem; /* 20px */
 	color: #FEFEFE ;
 	height: 3.75rem; /* 60px */
+    background-color:rgb(255, 255, 128);
 	
 `;
 

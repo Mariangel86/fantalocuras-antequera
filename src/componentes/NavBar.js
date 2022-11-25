@@ -33,6 +33,8 @@ const NavBar = () => {
 
     }
     const BotonFanta= styled.button`
+    background-color:rgb(255, 255, 128);
+    color: #FEFEFE
     margin-left:15px;
     margin-right:15px
     `;
