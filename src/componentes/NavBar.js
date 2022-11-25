@@ -1,7 +1,8 @@
 import React from "react";
 import './NavBar.css';
 import Logo from '../assets/Locuraslogo.jpg';
-import Carrito from "./Cartwidget";
+import Carrito from "./CartWidget";
+import styled from "styled-components";
 
 const NavBar = () => {
 
@@ -22,14 +23,18 @@ const NavBar = () => {
            
          </ul>
 
-        <Carrito/>
+         <Carrito/>
 
-        <button className='header__button'>
+        <BotonFanta>
             Comienza la FantaLocura
-            </button>
+            </BotonFanta>
         </nav>
         );
 
     }
+    const BotonFanta= styled.button`
+    margin-left:15px;
+    margin-right:15px
+    `;
 
     export default NavBar;
