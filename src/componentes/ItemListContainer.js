@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-const ItemLista = ()=> {
+const ItemLista = (props)=> {
 return(
     <ContenedorLista >
-        <h3>hello world</h3>
+        <h3>{props.title}</h3>
         <p> incredible world</p>
     </ContenedorLista >
 );

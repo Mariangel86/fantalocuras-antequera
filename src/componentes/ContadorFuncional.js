@@ -1,22 +1,43 @@
-import React, {useState} from "react";
+import {useReducer} from "react";
 
-const ContadorFuncional= () => {
+const contadorInicial={contador: 0};
 
-    const [Contador, cambiarContador] = useState  (0);
-    const incrementar = function() { cambiarContador(Contador + 1); };
-    const disminuir = function() { cambiarContador(Contador - 1); };
+const reducer = (estado, accion) => {
+switch (accion.tipo){
+    case 'INCREMENTAR':
+        return {contador: estado.contador +1}
+        case 'DISMINUIR':
+        return {contador: estado.contador -1}
+        case 'REINICIAR':
+        return {contador:0}
+        default: 
+        return estado;
 
-
-    return (
-        
-        <>
-        <h1>{Contador}</h1>
-
-        <button onClick = {incrementar}>Incrementar</button>
-        <button onClick = {disminuir}>Disminuir</button>
-    
-        </>
-    )
+}
 }
 
-export default ContadorFuncional;
+const UseReducer = () => {
+    const [estado, dispatch] = useReducer (reducer, contadorInicial)
+
+    return (
+      <div>
+       <h1>Contador: {estado.contador}</h1>
+       <button
+onClick={() => dispatch ({tipo: 'INCREMENTAR'})}
+>
+        Incrementar
+    </button>
+<button
+onClick={() => dispatch ({tipo: 'DISMINUIR'})}
+>
+        Disminuir
+    </button>
+    <button onClick={() => dispatch ({tipo: 'REINICIAR'})}
+>
+        Reiniciar
+    </button>
+     </div>
+       );
+     };
+
+export default UseReducer;
