@@ -1,10 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 const ContadorFuncional = ({cantidadAincrementar, cantidadAdisminuir, stock, onAdd, initial}) => {
-    const [cuenta, CambiarCuenta ] = useState (initial);
+    const [cuenta, CambiarCuenta ] = useState (parseInt(initial));
     const incrementar = (cantidad) =>CambiarCuenta(cuenta + cantidad);
     const disminuir = (cantidad) => CambiarCuenta(cuenta - cantidad);
 
+    useEffect(()=>{
+        CambiarCuenta (parseInt(initial))
+    },[initial])
 return (
 <div>
     <h1>Contador: {cuenta}</h1>
