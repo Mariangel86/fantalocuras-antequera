@@ -8,6 +8,10 @@ import ContadorFuncional from './componentes/ContadorFuncional2';
 
 const App = () => {
 
+ const onAdd=(quantity)=>{
+  console.log(`compraste ${quantity} unidades`);
+ }
+
 //const locunum = 5;
 
   return (
@@ -16,7 +20,7 @@ const App = () => {
       <Header/>
       <ItemLista title= "Hola"/>
      {/* <UseReducer />*/}
-      <ContadorFuncional cantidadAincrementar={1} cantidadAdisminuir= {1}/>
+      <ContadorFuncional cantidadAincrementar={1} cantidadAdisminuir= {1} stock={8} onAdd={onAdd} initial={1}/>
     </div>
   );
 }
