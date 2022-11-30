@@ -6,6 +6,7 @@ import ItemLista from './componentes/ItemListContainer';
 // import UseReducer from './componentes/ContadorFuncional';
 import ContadorFuncional from './componentes/ContadorFuncional2';
 import Items from './componentes/Items';
+import ItemDetalleContenedor from './componentes/ItemDetalleContenedor';
 
 const App = () => {
   const ejemplos=[
@@ -35,6 +36,7 @@ useEffect(() => {
       <Header/>
       <ItemLista title= "Hola"/>
       <Items productos={productos}/>
+      <ItemDetalleContenedor/>
      {/* <UseReducer />*/}
       <ContadorFuncional cantidadAincrementar={1} cantidadAdisminuir= {1} stock={8} onAdd={onAdd} initial={1}/>
     </div>
