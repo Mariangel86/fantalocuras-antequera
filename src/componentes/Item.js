@@ -1,10 +1,10 @@
 import React from "react";
 
-const Item =(ejemplo)=>{
+const Item =({todo})=>{
     return(
-    <a href=''>
-        <img src={ejemplo.image} alt=""/>
-        <p>{ejemplo.title}</p>
+    <a href="">
+        <img src={todo.image} alt=""/>
+        <p>{todo.title}</p>
     </a>
     );
         
