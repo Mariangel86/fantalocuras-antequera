@@ -1,11 +1,11 @@
 import React, {useState,useEffect} from "react";
 import ItemDetalle from "./ItemDetalle";
 
-const ejemplos=[
-    {id:1, title: "Taza Mug", image:"https://grafico.online/wp-content/uploads/2021/05/Mug-1.png" }];
+const ejemplos= {
+    id:1, title: "Taza Mug", image:"https://grafico.online/wp-content/uploads/2021/05/Mug-1.png"} ;
     
 const ItemDetalleContenedor =()=>{
-    const [productos, CambiarProductos ] = useState ();
+    const [productos, CambiarProductos ] = useState ({});
 
     useEffect(() => {
         const establecerProductos = new Promise(resolve => {
@@ -15,6 +15,7 @@ const ItemDetalleContenedor =()=>{
           });
           establecerProductos.then(resl => CambiarProductos(resl));
       },[])
+
     return(
     <ItemDetalle productos={productos}/>
     );
