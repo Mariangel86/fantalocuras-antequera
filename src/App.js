@@ -1,6 +1,5 @@
 import React from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import './App.css';
 import Header from './componentes/Header';
 import NavBar from './componentes/NavBar';
 //import ItemLista from './componentes/ItemListContainer';
@@ -39,12 +38,13 @@ const App = () => {
       <Items productos={productos}/>}
       
      {/* <UseReducer />*/}
-      <ContadorFuncional cantidadAincrementar={1} cantidadAdisminuir= {1} stock={8} onAdd={onAdd} initial={1}/>
+      
     <Routes>
       <Route path='/' element= {<ItemDetalleContenedor/>}/>
     
       
       </Routes>
+      <ContadorFuncional cantidadAincrementar={1} cantidadAdisminuir= {1} stock={8} onAdd={onAdd} initial={1}/>
       </BrowserRouter>
     </>
   );
