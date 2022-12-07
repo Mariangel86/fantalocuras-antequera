@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from "react";
 import ItemDetalle from "./ItemDetalle";
 
-const ejemplos= {
+const ejemplos2= {
     id:1, title: "Taza Mug", image:"https://grafico.online/wp-content/uploads/2021/05/Mug-1.png"} ;
     
 const ItemDetalleContenedor =()=>{
@@ -10,7 +10,7 @@ const ItemDetalleContenedor =()=>{
     useEffect(() => {
         const establecerProductos = new Promise(resolve => {
           setTimeout(() => {
-            resolve(ejemplos);
+            resolve(ejemplos2);
            },3000);
           });
           establecerProductos.then(resl => CambiarProductos(resl));
