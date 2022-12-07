@@ -3,6 +3,7 @@ import './NavBar.css';
 import Logo from '../assets/Locuraslogo.jpg';
 import Carrito from "./CartWidget";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
 
@@ -17,13 +18,19 @@ const NavBar = () => {
      <h1>Menu</h1>
 
         <ul>
-            <li>MUGS</li>
-            <li>ANIME</li>
-            <li>FANTASY </li>
+            <li>
+                <NavLink to='/*'>MUGS</NavLink>
+        </li>
+            <li>
+                <NavLink to='/'>ANIME</NavLink>
+        </li>
+            <li>
+                <NavLink to='/'>FANTASY </NavLink>
+            </li>
            
          </ul>
 
-         <Carrito/>
+         <NavLink to='/Cart'><Carrito/></NavLink>
 
         <BotonFanta>
             Comienza la FantaLocura
