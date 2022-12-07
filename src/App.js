@@ -7,6 +7,7 @@ import NavBar from './componentes/NavBar';
 import ContadorFuncional from './componentes/ContadorFuncional2';
 import Items from './componentes/Items';
 import ItemDetalleContenedor from './componentes/ItemDetalleContenedor';
+import Cart from './componentes/Cart';
 
 const App = () => {
   const ejemplos=[
@@ -42,7 +43,7 @@ useEffect(() => {
     <Routes>
       <Route path='/' element= {<ItemDetalleContenedor/>}/>
       <Route path='/*' element= {<Items productos={productos}/>}/>
-      <Route path='/Cart' element={<ContadorFuncional cantidadAincrementar={1} cantidadAdisminuir= {1} stock={8} onAdd={onAdd} initial={1}/>}></Route>
+      <Route path='/Cart' element={<Cart/>}></Route>
       
       </Routes>
       <ContadorFuncional cantidadAincrementar={1} cantidadAdisminuir= {1} stock={8} onAdd={onAdd} initial={1}/>
