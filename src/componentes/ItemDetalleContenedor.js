@@ -7,10 +7,11 @@ const ejemplos2= [
     {id:3, title:"anime", image:"https://revistadiners.com.co/wp-content/uploads/2019/09/portada_anime_1200x800.jpg", category:'Anime'}
 
   ];
+
     
-const ItemDetalleContenedor =()=>{
+const ItemDetalleContenedor=()=>{
     const [productos, CambiarProductos ] = useState ({});
-    const {categoriaId}= useParams();
+    const {detalleId}= useParams();
 
     useEffect(() => {
         const establecerProductos = new Promise(resolve => {
@@ -18,19 +19,18 @@ const ItemDetalleContenedor =()=>{
             resolve(ejemplos2);
            },3000);
           });
-          if (categoriaId){
-            establecerProductos.then (resl=> resl.filter(ejemplos2= ejemplos2.category === categoriaId));
+          if (detalleId){
+            establecerProductos.then (resl=> CambiarProductos(resl.find(ejemplos2= ejemplos2.category === parseInt(detalleId))));
           }else{
             
             establecerProductos.then(resl => CambiarProductos(resl));
           }
           
-      },[])
+      },[detalleId])
 
     return(
     <ItemDetalle productos={productos}/>
     );
-        
-}
+    }
 
 export default ItemDetalleContenedor;

@@ -1,49 +1,33 @@
-import React, {useState,useEffect} from 'react';
+import React from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Header from './componentes/Header';
 import NavBar from './componentes/NavBar';
-//import ItemLista from './componentes/ItemListContainer';
-// import UseReducer from './componentes/ContadorFuncional';
+import ItemLista from './componentes/ItemListContainer';
+
 import ContadorFuncional from './componentes/ContadorFuncional2';
 import ItemDetalleContenedor from './componentes/ItemDetalleContenedor';
 import Cart from './componentes/Cart';
-import { useParams } from 'react-router-dom';
+
 
 const App = () => {
-  const ejemplos=[
-    {id:1, title: "Taza Mug", image:"https://grafico.online/wp-content/uploads/2021/05/Mug-1.png" },
-    {id:2, title: "Taza Mug2", image:"https://grafico.online/wp-content/uploads/2021/05/Mug-1.png" },
-    {id:3, title: "Taza Mug3", image:"https://grafico.online/wp-content/uploads/2021/05/Mug-1.png" }
-  ];
-
-const [productos, CambiarProductos ] = useState ([]);
 
  const onAdd=(cantidad)=>{
   console.log(`compraste ${cantidad} unidades`);
  };
 
-useEffect(() => {
-  const establecerProductos = new Promise(resolve => {
-    setTimeout(() => {
-      resolve(ejemplos);
-     },3000);
-    });
-    establecerProductos.then(resl => CambiarProductos(resl));
-  },[categoriaId])
 
   return (
     <>
     <BrowserRouter>
       <NavBar/>
       <Header/> 
-      {/*<ItemLista title= "Hola"/>*/}
       
-     {/* <UseReducer />*/}
       
     <Routes>
-      <Route path='/' element= {<ItemDetalleContenedor/>}/>
-      <Route path='/Categoria/:categoriaId' element= {<ItemDetalleContenedor/>}/>
+      <Route path='/' element= {<ItemLista/>}/>
+      <Route path='/Categoria/:categoriaId' element= {<ItemLista/>}/>
       <Route path='/Cart' element={<Cart/>}></Route>
+      <Route path='/Detalle/:detalleId' element= {<ItemDetalleContenedor/>}/>
       
       </Routes>
       <ContadorFuncional cantidadAincrementar={1} cantidadAdisminuir= {1} stock={8} onAdd={onAdd} initial={1}/>
