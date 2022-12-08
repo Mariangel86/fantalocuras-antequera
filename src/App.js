@@ -5,9 +5,9 @@ import NavBar from './componentes/NavBar';
 //import ItemLista from './componentes/ItemListContainer';
 // import UseReducer from './componentes/ContadorFuncional';
 import ContadorFuncional from './componentes/ContadorFuncional2';
-import Items from './componentes/Items';
 import ItemDetalleContenedor from './componentes/ItemDetalleContenedor';
 import Cart from './componentes/Cart';
+import { useParams } from 'react-router-dom';
 
 const App = () => {
   const ejemplos=[
@@ -42,7 +42,7 @@ useEffect(() => {
       
     <Routes>
       <Route path='/' element= {<ItemDetalleContenedor/>}/>
-      <Route path='/*' element= {<Items productos={productos}/>}/>
+      <Route path='/Categoria/:categoriaId' element= {<ItemDetalleContenedor/>}/>
       <Route path='/Cart' element={<Cart/>}></Route>
       
       </Routes>
