@@ -29,7 +29,7 @@ useEffect(() => {
      },3000);
     });
     establecerProductos.then(resl => CambiarProductos(resl));
-  },[])
+  },[categoriaId])
 
   return (
     <>
