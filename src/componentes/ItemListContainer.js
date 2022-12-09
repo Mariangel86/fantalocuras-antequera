@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
-import styled from "styled-components";
 import { useParams } from "react-router-dom";
+import ItemDetalle from "./ItemDetalle";
 
     const ejemplos2= [
         {id:1, title: "Taza Mug", image:"https://grafico.online/wp-content/uploads/2021/05/Mug-1.png", category:'Mugs'},
@@ -21,13 +21,13 @@ import { useParams } from "react-router-dom";
                  },3000);
                 });
                 if (categoriaId){
-                  establecerProductos.then (resl=> resl.filter(ejemplos2= ejemplos2.category === categoriaId));
+                  establecerProductos.then (resl=> resl.filter(ejemplos2=> ejemplos2.category === categoriaId));
                 }else{
                   
                   establecerProductos.then(resl => CambiarProductos(resl));
                 }
                 
-            },[])
+            },[categoriaId])
       
           return(
           <ItemDetalle productos={productos}/>
@@ -36,11 +36,5 @@ import { useParams } from "react-router-dom";
       }
       
 
-
-const ContenedorLista = styled.div`
-    {color: blue;
-    width: 100%;
-    padding: 14px
-    }`
 
 export default ItemLista;
