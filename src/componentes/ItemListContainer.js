@@ -21,7 +21,7 @@ import ItemDetalle from "./ItemDetalle";
                  },3000);
                 });
                 if (categoriaId){
-                  establecerProductos.then (resl=> resl.filter(ejemplos2=> ejemplos2.category === categoriaId));
+                  establecerProductos.then (resl=> resl.filter(ejemplo2=> ejemplo2.category === categoriaId));
                 }else{
                   
                   establecerProductos.then(resl => CambiarProductos(resl));
