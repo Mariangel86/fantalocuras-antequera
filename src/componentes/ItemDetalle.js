@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import '../../src/ItemDetalleContenedor.css';
+import ContadorFuncional from "./ContadorFuncional2";
 
 
 const ItemDetalle =({productos})=>{
+
+    const [irACarrito,cambiarIrACarrito]= useState(false);
+    const onAdd=(cantidad)=>{
+        cambiarIrACarrito(true);
+       };
+
     return(
     <div className="contenedor">
         <div className="detalle">
@@ -11,7 +19,12 @@ const ItemDetalle =({productos})=>{
 
         <div className="contenido">
         <h1>{productos.title}</h1>
+            { irACarrito 
+            ? <Link to='/Cart' >Finalizar Su Compra/</Link> 
+            :
+        <ContadorFuncional cantidadAincrementar={1} cantidadAdisminuir= {1} stock={8} onAdd={onAdd} initial={1}/>}
         </div>
+ 
     </div>
     );
         
