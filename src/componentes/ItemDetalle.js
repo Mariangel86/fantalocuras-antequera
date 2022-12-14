@@ -2,13 +2,17 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import '../../src/ItemDetalleContenedor.css';
 import ContadorFuncional from "./ContadorFuncional2";
-
+import {UsoContextoCarrito} from "./../Contextos/CartContext";
 
 const ItemDetalle =({productos})=>{
 
     const [irACarrito,cambiarIrACarrito]= useState(false);
+
+    const {AgregarProducto}= UsoContextoCarrito();
+
     const onAdd=(cantidad)=>{
         cambiarIrACarrito(true);
+        AgregarProducto(productos, cantidad);
        };
 
     return(
