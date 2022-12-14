@@ -11,10 +11,10 @@ const CartProvider=({children})=>{
 
  const EstaEnCarrito=(id)=> carrito.find(producto=>producto.id=== id)? true:false;
 
- const RemoverProducto=(id)=> cambiarCarrito(carrito.filter(producto=> producto.id==!id)) 
+ const RemoverProducto=(id)=> cambiarCarrito(carrito.filter(producto=> producto.id !==id)) 
 
  const AgregarProducto=(item, nuevaCantidad)=>{
-    const nuevoCarrito= carrito.filter(prod.prod.id !==item.id);
+    const nuevoCarrito= carrito.filter(producto=>producto.id !==item.id);
     nuevoCarrito.push({...item, cantidad:nuevaCantidad});
     cambiarCarrito(nuevoCarrito)
  }
@@ -31,4 +31,4 @@ const CartProvider=({children})=>{
     );
 }
 
-export default {CartProvider, UsoContextoCarrito};
+export {CartProvider, UsoContextoCarrito};
