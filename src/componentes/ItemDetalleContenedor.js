@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Locura from '../assets/imagenlocura.png';
 
 const ejemplos2= 
-    {id:4, title: "locura", image:<Locura/>, category: 'Mugs' };
+    {id:1, title: "locura", image:(Locura), category: 'Mugs'};
 
     
 const ItemDetalleContenedor=()=>{
@@ -17,7 +17,7 @@ const ItemDetalleContenedor=()=>{
             resolve(ejemplos2);
            },3000);
           });
-            establecerProductos.then (resl=> CambiarProductos(resl.find(ejemplo2 => ejemplo2.id === parseInt(detalleId))));
+            establecerProductos.then (resl=> CambiarProductos(resl.find(ejemplos2 => ejemplos2.id === parseInt(detalleId))));
     },[detalleId])
 
     return(
