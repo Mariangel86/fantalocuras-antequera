@@ -3,9 +3,8 @@ import { useParams } from "react-router-dom";
 import ItemDetalle from "./ItemDetalle";
 import Locura from '../assets/imagenlocura.png';
 
-
     const ejemplos2=
-      {id:1, title: "locura", image:(Locura), category: 'Mugs'};
+          {id:1, title: "locura", image: (Locura), category: 'Mugs' };
     
           
       const ItemLista=()=>{
@@ -19,7 +18,7 @@ import Locura from '../assets/imagenlocura.png';
                  },3000);
                 });
                 if (categoriaId){
-                  establecerProductos.then (resl=> resl.filter(ejemplos2=> ejemplos2.category === categoriaId));
+                  establecerProductos.then (resl=> resl.filter(ejemplo2=> ejemplo2.category === categoriaId));
                 }else{
                   
                   establecerProductos.then(resl => CambiarProductos(resl));
