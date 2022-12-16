@@ -1,14 +1,14 @@
 import React, {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
-import ItemDetalle from "./ItemDetalle";
 import Locura from '../assets/imagenlocura.png';
+import Items from './Items';
 
     const ejemplos2=
           {id:1, title: "locura", image: (Locura), category: 'Mugs' };
     
           
       const ItemLista=()=>{
-          const [productos, CambiarProductos ] = useState ({});
+          const [productos, CambiarProductos ] = useState ([]);
           const {categoriaId}= useParams();
       
           useEffect(() => {
@@ -18,16 +18,17 @@ import Locura from '../assets/imagenlocura.png';
                  },3000);
                 });
                 if (categoriaId){
-                  establecerProductos.then (resl=> resl.filter(ejemplo2=> ejemplo2.category === categoriaId));
+                  establecerProductos.then(res=> CambiarProductos(res.filter(ejemplo2=> ejemplo2.category === categoriaId)));
+            
                 }else{
                   
-                  establecerProductos.then(resl => CambiarProductos(resl));
+                  establecerProductos.then(res => CambiarProductos(res));
                 }
                 
             },[categoriaId])
       
           return(
-          <ItemDetalle productos={productos}/>
+          <Items productos={productos}/>
           );
               
       }
