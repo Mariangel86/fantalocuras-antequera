@@ -10,7 +10,7 @@ const ItemDetalle =({productos})=>{
 
     const {AgregarProducto}= UsoContextoCarrito();
 
-    const onAdd=(cantidad)=>{
+    const onAdd = (cantidad) => {
         cambiarIrACarrito(true);
         AgregarProducto(productos, cantidad);
        }
@@ -23,10 +23,12 @@ const ItemDetalle =({productos})=>{
 
         <div className="contenido">
         <h1>{productos.title}</h1>
-            { irACarrito 
-            ? <Link to='/Cart' >Finalizar Su Compra/</Link> 
+            { 
+            irACarrito 
+            ? <Link to='/Cart' > Finalizar Su Compra </Link> 
             :
-        <ContadorFuncional cantidadAincrementar={1} cantidadAdisminuir= {1} stock={8} onAdd={onAdd} initial={1}/>}
+        <ContadorFuncional cantidadAincrementar={1} cantidadAdisminuir= {1} stock={8} onAdd={onAdd} initial={1}/>
+        }
         </div>
  
     </div>

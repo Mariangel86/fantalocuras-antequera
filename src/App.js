@@ -3,16 +3,11 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Header from './componentes/Header';
 import NavBar from './componentes/NavBar';
 import ItemLista from './componentes/ItemListContainer';
-import ContadorFuncional from './componentes/ContadorFuncional2';
 import ItemDetalleContenedor from './componentes/ItemDetalleContenedor';
 import Cart from './componentes/Cart';
 
 
 const App = () => {
-
- const onAdd=(cantidad)=>{
-  console.log(`compraste ${cantidad} unidades`);
- };
 
 
   return (
@@ -29,7 +24,6 @@ const App = () => {
       <Route path='/Detalle/:detalleId' element= {<ItemDetalleContenedor/>}/>
       
       </Routes>
-      <ContadorFuncional cantidadAincrementar={1} cantidadAdisminuir= {1} stock={8} onAdd={onAdd} initial={1}/>
       </BrowserRouter>
     </>
   );
