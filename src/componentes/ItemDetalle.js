@@ -13,7 +13,7 @@ const ItemDetalle =({productos})=>{
     const onAdd=(cantidad)=>{
         cambiarIrACarrito(true);
         AgregarProducto(productos, cantidad);
-       };
+       }
 
     return(
     <div className="contenedor">

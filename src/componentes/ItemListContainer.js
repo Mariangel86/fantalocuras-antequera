@@ -2,9 +2,12 @@ import React, {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import Locura from '../assets/imagenlocura.png';
 import Items from './Items';
+import Carrito from '../assets/carrito.png';
 
-    const ejemplos2=
-          {id:1, title: "locura", image: (Locura), category: 'Mugs' };
+    const ejemplos2=[
+          {id:1, title: "locura", image: (Locura), category: 'Mugs' },
+          {id:2, title: "carrito", image: (Carrito), category: 'Fantasy' }
+        ]
     
           
       const ItemLista=()=>{
