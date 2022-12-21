@@ -9,6 +9,7 @@ const ContadorFuncional = ({cantidadAincrementar, cantidadAdisminuir, stock, onA
     useEffect(()=>{
         CambiarCuenta (parseInt(initial))
     },[initial])
+    
 return (
 <div>
     <h1>Contador: {cuenta}</h1>

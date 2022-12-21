@@ -2,7 +2,7 @@ import React,{ useState, useContext } from "react";
 
 const CartContext= React.createContext([]);
 
-const UsoContextoCarrito = () => useContext(CartContext);
+export const UsoContextoCarrito = () => useContext(CartContext);
 
 const CartProvider=({children})=>{
     const [carrito, cambiarCarrito] = useState([]);
@@ -30,4 +30,4 @@ const CartProvider=({children})=>{
     );
 }
 
-export {CartProvider, UsoContextoCarrito};
+export default CartProvider;
