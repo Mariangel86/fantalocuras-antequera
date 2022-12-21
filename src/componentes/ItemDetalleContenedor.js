@@ -5,8 +5,8 @@ import Locura from '../assets/imagenlocura.png';
 import Carrito from '../assets/carrito.png';
 
 const ejemplos2= [
-  {id:1, title: "locura", image: (Locura), category: 'Mugs' },
-  {id:2, title: "carrito", image: (Carrito), category: 'Fantasy' }
+  {id:1, price: 50, title: "locura", image: (Locura), category: 'Mugs' },
+  {id:2, price: 100, title: "carrito", image: (Carrito), category: 'Fantasy' }
 ]
 
     

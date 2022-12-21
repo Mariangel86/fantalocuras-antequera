@@ -13,17 +13,33 @@ const CartProvider=({children})=>{
 
  const RemoverProducto=(id)=> cambiarCarrito(carrito.filter(producto=> producto.id !== id)) 
 
- const AgregarProducto=(item, nuevaCantidad)=>{
-    const nuevoCarrito = carrito.filter(producto => producto.id !== item.id); 
-    nuevoCarrito.push({ ...item, cantidad: nuevaCantidad });
-    cambiarCarrito(nuevoCarrito);
+ const AgregarProducto=(item, cuenta)=>{
+    if (estaEnCarrito(item.id)){
+        cambiarCarrito(carrito.map(producto=>{
+            return producto.id === item.id ? { ...producto, cuenta:producto.cuenta+ cuenta} : producto
+
+        }));
+    } else {
+        cambiarCarrito([...carrito, {...item, cuenta}]);
+    }
+     
  }
+
+
+ const TotalPrice=()=>{
+    return carrito.reduce ((prev, act)=> prev+ act.cuenta*act.price, 0);
+ }
+
+ const TotalProductos=()=> carrito.reduce((acumulador,productoActual)=> acumulador+ productoActual.cuenta,0);
+
     return(
         <CartContext.Provider value={{
             LimpiarCarrito,
             EstaEnCarrito,
             RemoverProducto,
-            AgregarProducto
+            AgregarProducto,
+            TotalPrice,
+            TotalProductos
         }}>
             {children}
         </CartContext.Provider>

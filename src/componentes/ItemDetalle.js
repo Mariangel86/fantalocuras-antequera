@@ -10,9 +10,9 @@ const ItemDetalle =({productos})=>{
 
     const {AgregarProducto}= UsoContextoCarrito();
 
-    const onAdd = (cantidad) => {
+    const onAdd = (cuenta) => {
         cambiarIrACarrito(true);
-        AgregarProducto(productos, cantidad);
+        AgregarProducto(productos, cuenta);
        }
 
     return(
