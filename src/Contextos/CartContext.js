@@ -14,7 +14,7 @@ const CartProvider=({children})=>{
  const RemoverProducto=(id)=> cambiarCarrito(carrito.filter(producto=> producto.id !== id)) 
 
  const AgregarProducto=(item, cuenta)=>{
-    if (estaEnCarrito(item.id)){
+    if (EstaEnCarrito(item.id)){
         cambiarCarrito(carrito.map(producto=>{
             return producto.id === item.id ? { ...producto, cuenta:producto.cuenta+ cuenta} : producto
 
@@ -39,7 +39,8 @@ const CartProvider=({children})=>{
             RemoverProducto,
             AgregarProducto,
             TotalPrice,
-            TotalProductos
+            TotalProductos,
+            carrito
         }}>
             {children}
         </CartContext.Provider>
