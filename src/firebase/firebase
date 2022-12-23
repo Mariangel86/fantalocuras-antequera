@@ -1,0 +1,12 @@
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDljgcrdxjbeBnbgwX6pksSCZGh3WVpAAQ",
+    authDomain: "fantalocuras-antequera.firebaseapp.com",
+    projectId: "fantalocuras-antequera",
+    storageBucket: "fantalocuras-antequera.appspot.com",
+    messagingSenderId: "52463473398",
+    appId: "1:52463473398:web:75ad5af64933c99c36d2d7"
+  };
+  
+  const app = initializeApp(firebaseConfig);

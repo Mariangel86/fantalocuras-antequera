@@ -16,3 +16,4 @@ const ItemsCart = ( {producto} ) =>{
         </div>
     )
 }
+    export default ItemsCart;
