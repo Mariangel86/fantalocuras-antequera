@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { UsoContextoCarrito } from "../Contextos/CartContext";
+//import { UsoContextoCarrito } from "../Contextos/CartContext";
 
 const Cart= styled.button`
     background-color:rgb(255, 255, 128);
@@ -13,13 +13,14 @@ const Cart= styled.button`
     `;
 
 const Carrito=()=>{
-    const {TotalProductos}=UsoContextoCarrito();
+   // const {TotalProductos}=UsoContextoCarrito();
 
     return(
         <>
         <Cart className="bi bi-cart4"></Cart>
-        <span>{TotalProductos()|| ''}</span>
+       {/* <span>{TotalProductos()|| ''}</span>*/}
         </>
+        
     );
 }
 export default Carrito;
