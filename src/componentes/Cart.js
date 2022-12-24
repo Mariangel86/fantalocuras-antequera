@@ -2,6 +2,7 @@ import React from "react";
 import { UsoContextoCarrito } from "../Contextos/CartContext";
 import {Link} from 'react-router-dom';
 import ItemsCart from './ItemsCart';
+
 const Cart =()=>{
 const [carrito, TotalPrice]= UsoContextoCarrito();
 

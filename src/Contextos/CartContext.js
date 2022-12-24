@@ -30,7 +30,7 @@ const CartProvider=({children})=>{
     return carrito.reduce ((prev, act)=> prev+ act.cuenta*act.price, 0);
  }
 
- const TotalProductos=()=> carrito.reduce((acumulador,productoActual)=> acumulador+ productoActual.cuenta,0);
+ const TotalProductos=()=> carrito.reduce((acumulador,productoActual)=> acumulador + productoActual.cuenta,0);
 
     return(
         <CartContext.Provider value={{

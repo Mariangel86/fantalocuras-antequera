@@ -13,12 +13,12 @@ const Cart= styled.button`
     `;
 
 const Carrito=()=>{
-    const {Totalproductos}=UsoContextoCarrito();
+    const {TotalProductos}=UsoContextoCarrito();
 
     return(
         <>
         <Cart className="bi bi-cart4"></Cart>
-        <span>{Totalproductos()|| ''}</span>
+        <span>{TotalProductos()|| ''}</span>
         </>
     );
 }
