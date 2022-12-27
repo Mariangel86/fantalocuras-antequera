@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import ItemsCart from './ItemsCart';
 
 const Cart =()=>{
-const [carrito, TotalPrice]= UsoContextoCarrito();
+const {carrito, TotalPrice}= UsoContextoCarrito();
 
     if (carrito.length ===0){
         return(

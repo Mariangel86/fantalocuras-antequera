@@ -5,6 +5,7 @@ import NavBar from './componentes/NavBar';
 import ItemLista from './componentes/ItemListContainer';
 import ItemDetalleContenedor from './componentes/ItemDetalleContenedor';
 import Cart from './componentes/Cart';
+import CartProvider from './Contextos/CartContext';
 
 
 const App = () => {
@@ -13,9 +14,9 @@ const App = () => {
   return (
     <>
     <BrowserRouter>
+    <CartProvider>
       <NavBar/>
       <Header/> 
-      
       
     <Routes>
       <Route path='/' element= {<ItemLista/>}/>
@@ -24,6 +25,7 @@ const App = () => {
       <Route path='/Detalle/:detalleId' element= {<ItemDetalleContenedor/>}/>
       
       </Routes>
+      </CartProvider>
       </BrowserRouter>
     </>
   );
