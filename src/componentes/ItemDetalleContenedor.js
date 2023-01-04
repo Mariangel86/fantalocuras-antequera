@@ -17,7 +17,7 @@ const ItemDetalleContenedor=()=>{
     const {detalleId}= useParams();
 
     useEffect(() => {
-      const queryDoc = doc(db, 'productos', '0DwN5cnlsVF59eUv4Lub');
+      const queryDoc = doc(db, 'productos', detalleId);
      getDoc(queryDoc)
           .then (resl=> CambiarProductos({id: resl.id, ...resl.productos()}))
   },[detalleId])
