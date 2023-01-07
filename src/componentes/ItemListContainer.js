@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 //import Items from './Items';
 //import Carrito from '../assets/carrito.png';
 import { collection, getDocs, query, where } from "firebase/firestore";
-import {db} from './../firebase/firebaseConfig';
+import db from './../firebase/firebaseConfig';
 
   //  const ejemplos2=[
   //        {id:1, price: 50, title: "locura", image: (Locura), category: 'Mugs' },
