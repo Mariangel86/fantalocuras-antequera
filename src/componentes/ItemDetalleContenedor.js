@@ -3,8 +3,7 @@ import ItemDetalle from "./ItemDetalle";
 import { useParams } from "react-router-dom";
 //import Locura from '../assets/imagenlocura.png';
 //import Carrito from '../assets/carrito.png';
-import { doc, getDoc} from 'firebase/firestore';
-import {db}from './../firebase/firebaseConfig';
+import {getFirestore, doc, getDoc} from 'firebase/firestore';
 
 //const ejemplos2= [
   //{id:1, price: 50, title: "locura", image: (Locura), category: 'Mugs' },
@@ -17,7 +16,8 @@ const ItemDetalleContenedor=()=>{
     const {detalleId}= useParams();
 
     useEffect(() => {
-      const queryDoc = doc(db, 'productos', detalleId);
+      const  queryDb = getFirestore();
+      const queryDoc = doc(queryDb, 'productos', detalleId);
      getDoc(queryDoc)
           .then (resl=> CambiarProductos({id: resl.id, ...resl.productos()}))
   },[detalleId])

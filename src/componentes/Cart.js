@@ -2,11 +2,11 @@ import React from "react";
 import { UsoContextoCarrito } from "../Contextos/CartContext";
 import {Link} from 'react-router-dom';
 import ItemsCart from './ItemsCart';
-import {db}from './../firebase/firebaseConfig';
-import { addDoc, collection} from 'firebase/firestore';
+import { getFirestore, addDoc, collection} from 'firebase/firestore';
 
 const Cart =()=>{
 const {carrito, TotalPrice}= UsoContextoCarrito();
+const db = getFirestore();
 const Orden={
     comprador:{
         name:'mariangel',

@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 //import Locura from '../assets/imagenlocura.png';
-//import Items from './Items';
+import Items from './Items';
 //import Carrito from '../assets/carrito.png';
-import { collection, getDocs, query, where } from "firebase/firestore";
-import db from './../firebase/firebaseConfig';
+import {getFirestore, collection, getDocs, query, where } from "firebase/firestore";
 
   //  const ejemplos2=[
   //        {id:1, price: 50, title: "locura", image: (Locura), category: 'Mugs' },
@@ -18,20 +17,21 @@ import db from './../firebase/firebaseConfig';
           const {categoriaId}= useParams();
 
           useEffect(() => {
-            const queryCollection = collection(db, 'productos');
+            const  queryDb = getFirestore();
+            const queryCollection = collection(queryDb, 'productos');
             if (categoriaId) {
             const queryFilter= query(queryCollection,
               where('category', '==', categoriaId))
 
            getDocs(queryFilter)
-                .then (resl=> CambiarProductos(resl.docs.map(producto=>({id: producto.id, ...producto.productos() }))))
+                .then(resl=> CambiarProductos(resl.docs.map(producto=>({id: producto.id, ...producto.productos() }))))
           }else{
             getDocs(queryCollection)
-                .then (resl=> CambiarProductos(resl.docs.map(producto=>({id: producto.id, ...producto.productos() }))))
+                .then(resl=> CambiarProductos(resl.docs.map(producto=>({id: producto.id, ...producto.productos() }))))
           }
 
         },[categoriaId])
-      }
+      
       
         //  useEffect(() => {
         //      const establecerProductos = new Promise(resolve => {
@@ -49,11 +49,10 @@ import db from './../firebase/firebaseConfig';
         //        
         //    },[categoriaId])
         //
-        //  return(
-        //  <Items productos={productos}/>
-        //  );
-        //      
-        //}
+         return(
+        <Items productos={productos}/>
+           );      
+        }
       
 
 
