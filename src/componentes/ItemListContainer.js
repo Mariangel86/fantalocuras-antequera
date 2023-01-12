@@ -21,14 +21,14 @@ import {getFirestore, collection, getDocs, query, where } from "firebase/firesto
             const queryCollection = collection(querydb, 'productos');
            // if (categoriaId) {
             getDocs(queryCollection)
-            .then(resl=> console.log(resl.docs));
+            .then(resl => CambiarProductos(resl.docs.map(producto => ({id: producto.id, ...producto.productos() }))))
          //     where('category', '==', categoriaId))
 //
   //         getDocs(queryFilter)
-    //            .then(resl=> CambiarProductos(resl.docs.map(producto=>({id: producto.id, ...productos.productos() }))))
+    //            .then(resl=> CambiarProductos(resl.docs.map(productos=>({id: productos.id, ...productos.productos() }))))
       //    }else{
         //    getDocs(queryCollection)
-          //      .then(resl=> CambiarProductos(resl.docs.map(producto=>({id: producto.id, ...productos.productos() }))))
+          //      .then(resl=> CambiarProductos(resl.docs.map(productos=>({id: productos.id, ...productos.productos() }))))
           //}
 
         },[categoriaId])
