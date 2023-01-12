@@ -17,18 +17,19 @@ import {getFirestore, collection, getDocs, query, where } from "firebase/firesto
           const {categoriaId}= useParams();
 
           useEffect(() => {
-            const  queryDb = getFirestore();
-            const queryCollection = collection(queryDb, 'productos');
-            if (categoriaId) {
-            const queryFilter= query(queryCollection,
-              where('category', '==', categoriaId))
-
-           getDocs(queryFilter)
-                .then(resl=> CambiarProductos(resl.docs.map(producto=>({id: producto.id, ...producto.productos() }))))
-          }else{
+            const  querydb = getFirestore();
+            const queryCollection = collection(querydb, 'productos');
+           // if (categoriaId) {
             getDocs(queryCollection)
-                .then(resl=> CambiarProductos(resl.docs.map(producto=>({id: producto.id, ...producto.productos() }))))
-          }
+            .then(resl=> console.log(resl.docs));
+         //     where('category', '==', categoriaId))
+//
+  //         getDocs(queryFilter)
+    //            .then(resl=> CambiarProductos(resl.docs.map(producto=>({id: producto.id, ...productos.productos() }))))
+      //    }else{
+        //    getDocs(queryCollection)
+          //      .then(resl=> CambiarProductos(resl.docs.map(producto=>({id: producto.id, ...productos.productos() }))))
+          //}
 
         },[categoriaId])
       

@@ -19,7 +19,7 @@ const ItemDetalleContenedor=()=>{
       const  queryDb = getFirestore();
       const queryDoc = doc(queryDb, 'productos', detalleId);
      getDoc(queryDoc)
-          .then (resl=> CambiarProductos({id: resl.id, ...resl.productos()}))
+          .then(resl=> CambiarProductos({id: resl.id, ...resl.productos()}))
   },[detalleId])
 
    (/* useEffect(() => {
