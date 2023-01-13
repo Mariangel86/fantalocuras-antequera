@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 //import Locura from '../assets/imagenlocura.png';
 import Items from './Items';
 //import Carrito from '../assets/carrito.png';
-import {getFirestore, collection, getDocs, query, where } from "firebase/firestore";
+import {getFirestore, collection, onSnapshot,getDocs, query, where } from "firebase/firestore";
 
   //  const ejemplos2=[
   //        {id:1, price: 50, title: "locura", image: (Locura), category: 'Mugs' },
@@ -18,10 +18,14 @@ import {getFirestore, collection, getDocs, query, where } from "firebase/firesto
 
           useEffect(() => {
             const  querydb = getFirestore();
-            const queryCollection = collection(querydb, 'productos');
            // if (categoriaId) {
-            getDocs(queryCollection)
-            .then(resl => CambiarProductos(resl.docs.map(producto => ({id: producto.id, ...producto.productos() }))))
+            onSnapshot (collection(querydb, 'usuarios'),
+        (snapshot)=>{
+            const arregloUsuarios = snapshot.docs.map((producto)=>{
+                return {...producto.productos()} })
+                CambiarProductos(arregloUsuarios);
+                }
+            );
          //     where('category', '==', categoriaId))
 //
   //         getDocs(queryFilter)
