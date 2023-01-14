@@ -19,10 +19,10 @@ import {getFirestore, collection, onSnapshot,getDocs, query, where } from "fireb
           useEffect(() => {
             const  querydb = getFirestore();
            // if (categoriaId) {
-            onSnapshot (collection(querydb, 'usuarios'),
+            onSnapshot (collection(querydb, 'productos'),
         (snapshot)=>{
             const arregloUsuarios = snapshot.docs.map((producto)=>{
-                return {...producto.productos()} })
+                return {...producto.productos} })
                 CambiarProductos(arregloUsuarios);
                 }
             );
