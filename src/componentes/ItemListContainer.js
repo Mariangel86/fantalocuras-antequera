@@ -22,7 +22,7 @@ import {getFirestore, collection, onSnapshot,getDocs, query, where } from "fireb
             onSnapshot (collection(querydb, 'productos'),
         (snapshot)=>{
             const arregloUsuarios = snapshot.docs.map((producto)=>{
-                return {...producto.productos} })
+                return {id: producto.id, ...producto.productos} })
                 CambiarProductos(arregloUsuarios);
                 }
             );
