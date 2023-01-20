@@ -6,7 +6,7 @@ import { getFirestore, addDoc, collection} from 'firebase/firestore';
 
 const Cart =()=>{
 const {carrito, TotalPrice}= UsoContextoCarrito();
-const db = getFirestore();
+const querydb = getFirestore();
 const Orden={
     comprador:{
         name:'mariangel',
@@ -19,7 +19,7 @@ const Orden={
 }
 
 const handleClick=()=>{
-    const ordenesCollection= collection(db, 'Ordenes');
+    const ordenesCollection= collection(querydb, 'Ordenes');
     addDoc(ordenesCollection, Orden)
     .then (({id})=> console.log(id))
 

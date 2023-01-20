@@ -11,25 +11,16 @@ import {getFirestore, doc, getDoc} from 'firebase/firestore';
 //]
 
     
-const ItemDetalleContenedor=()=>{
-    const [productos, CambiarProductos ] = useState ({});
+const ItemDetalleContenedor= () => {
+    const [productos, CambiarOrdenProductos ] = useState ({});
     const {detalleId}= useParams();
 
     useEffect(() => {
-      const  queryDb = getFirestore();
-      const queryDoc = doc(queryDb, 'productos', detalleId);
+      const  querydb = getFirestore();
+      const queryDoc = doc(querydb, 'productos', detalleId);
      getDoc(queryDoc)
-          .then(resl=> CambiarProductos({id: resl.id, ...resl.data()}))
+          .then(resl=> CambiarOrdenProductos({id: resl.id, ...resl.data()}))
   },[detalleId])
-
-   (/* useEffect(() => {
-        const establecerProductos = new Promise(resolve => {
-          setTimeout(() => {
-            resolve(ejemplos2);
-           },3000);
-          });
-            establecerProductos.then (res=> CambiarProductos(res.find(ejemplo2 => ejemplo2.id === parseInt(detalleId))));
-    },[detalleId])*/)
 
     return(
     <ItemDetalle productos={productos}/>
