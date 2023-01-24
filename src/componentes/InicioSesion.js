@@ -1,9 +1,9 @@
 import React, {useState} from "react";
-
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/firebaseConfig";
 import Alerta from "../elementos/Alerta";
 import { useNavigate } from "react-router-dom";
+import {Boton,Input,ContenedorBoton,Titulo,ContenedorHeader,Formulario} from './../elementos/elementos';
 
 const InicioSesion=()=> {
 
@@ -43,7 +43,7 @@ const InicioSesion=()=> {
   
     try {
       await signInWithEmailAndPassword (auth,correo,password);
-      navigate('/');
+      navigate('/Iniciarsesion');
     }  catch (error){
       cambiarEstadoAlerta(true);
 
@@ -66,16 +66,13 @@ const InicioSesion=()=> {
 <>
     
       <title>Iniciar Sesion</title>
-    <Header>
       <ContenedorHeader>
         <Titulo> Iniciar Sesion</Titulo>
         <div>
         <Boton to="/crear-cuenta">Registrarse</Boton>
         </div>
         </ContenedorHeader>
-    </Header>
     <Formulario onSubmit={handleSubmit}>
-      <Svg/>
       <Input
       type="email"
       name="email"
@@ -94,11 +91,11 @@ const InicioSesion=()=> {
       <Boton as="button" primario type="submit">Iniciar Sesion</Boton>
       </ContenedorBoton>
     </Formulario>
-    <Alerta 
+    {<Alerta 
     tipo={alerta.tipo}
             mensaje={alerta.mensaje}
             estadoAlerta={estadoAlerta}
-            cambiarEstadoAlerta={cambiarEstadoAlerta}/>
+            cambiarEstadoAlerta={cambiarEstadoAlerta}/>}
     </>
   );
 }

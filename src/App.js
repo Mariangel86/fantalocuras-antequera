@@ -6,7 +6,7 @@ import ItemLista from './componentes/ItemListContainer';
 import ItemDetalleContenedor from './componentes/ItemDetalleContenedor';
 import Cart from './componentes/Cart';
 import CartProvider from './Contextos/CartContext';
-
+import InicioSesion from './componentes/InicioSesion';
 
 const App = () => {
 
@@ -23,6 +23,7 @@ const App = () => {
       <Route path='/categoria/:categoriaId' element= {<ItemLista/>}/>
       <Route path='/Cart' element={<Cart/>}></Route>
       <Route path='/Detalle/:detalleId' element= {<ItemDetalleContenedor/>}/>
+      <Route path='/IniciarSesion' element= {<InicioSesion/>}></Route>
       
       </Routes>
       </CartProvider>

@@ -32,9 +32,10 @@ const NavBar = () => {
 
          <NavLink to='/Cart'><Carrito/></NavLink>
 
+       <NavLink to='/IniciarSesion'> 
         <BotonFanta>
             Comienza la FantaLocura
-            </BotonFanta>
+        </BotonFanta></NavLink>
         </nav>
         );
 
