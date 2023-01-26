@@ -21,7 +21,7 @@ const Orden={
 const handleClick=()=>{
     const ordenesCollection= collection(querydb, 'Ordenes');
     addDoc(ordenesCollection, Orden)
-    .then (({id})=> console.log(id))
+    .then (({id,title,price})=> console.log(id,title,price))
 
 }
 
@@ -43,7 +43,7 @@ const handleClick=()=>{
         <p>
             Total: {TotalPrice()}
         </p>
-        <button onClick={handleClick}>Generar Orden</button>
+        <button onClick={handleClick} as={Link} to={`/IniciarSesion`}>Generar Orden</button>
         </>
         );
 }
