@@ -18,6 +18,8 @@ margin: auto;
 
 .detalle-image {
     width: 100%;
+    justify-content: center;
+   
     
 }
 

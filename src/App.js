@@ -7,6 +7,7 @@ import ItemDetalleContenedor from './componentes/ItemDetalleContenedor';
 import Cart from './componentes/Cart';
 import CartProvider from './Contextos/CartContext';
 import InicioSesion from './componentes/InicioSesion';
+import RegistroUsuarios from './componentes/RegistroUsuarios';
 
 const App = () => {
 
@@ -24,6 +25,7 @@ const App = () => {
       <Route path='/Cart' element={<Cart/>}></Route>
       <Route path='/Detalle/:detalleId' element= {<ItemDetalleContenedor/>}/>
       <Route path='/IniciarSesion' element= {<InicioSesion/>}></Route>
+      <Route path="/Crear-cuenta" element={<RegistroUsuarios/>}/>
       
       </Routes>
       </CartProvider>
