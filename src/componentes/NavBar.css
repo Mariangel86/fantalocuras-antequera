@@ -6,6 +6,12 @@ nav {
     font-size:large;
     background-color: cadetblue;
 }
+
+nav ul li{
+    float: left;
+    margin: 10px;
+}
+
 img {
     width: 20%;
 }

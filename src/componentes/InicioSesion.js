@@ -43,7 +43,7 @@ const InicioSesion=()=> {
   
     try {
       await signInWithEmailAndPassword (auth,correo,password);
-      navigate('/Iniciarsesion');
+      navigate('/');
     }  catch (error){
       cambiarEstadoAlerta(true);
 
