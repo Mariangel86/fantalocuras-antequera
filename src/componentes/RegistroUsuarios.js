@@ -35,7 +35,7 @@ const RegistroUsuarios=()=> {
 
   const expresionRegular= /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
   if (!expresionRegular.test(correo)){
-    cambiarEstadoAlerta(true)
+    cambiarEstadoAlerta(true);
     cambiarAlerta({
       tipo: 'error',
       mensaje: 'Por favor ingresa un correo valido'
@@ -60,7 +60,7 @@ const RegistroUsuarios=()=> {
     }
     try {
       await createUserWithEmailAndPassword (auth,correo,password);
-      navigate('/Crear-cuenta');
+      navigate('/');
     }  catch (error){
       cambiarEstadoAlerta(true);
 
@@ -89,7 +89,7 @@ const RegistroUsuarios=()=> {
       <ContenedorHeader>
         <Titulo> Crear cuenta</Titulo>
         <div>
-        <Boton to="IniciarSesion">Iniciar Sesion</Boton>
+        <Boton to="/">Ir al menu principal</Boton>
         </div>
         </ContenedorHeader>
     <Formulario onSubmit={handleSubmit}>

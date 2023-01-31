@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-//import { signInWithEmailAndPassword } from "firebase/auth";
-//import { auth } from "../firebase/firebaseConfig";
-//import Alerta from "../elementos/Alerta";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase/firebaseConfig";
+import Alerta from "../elementos/Alerta";
 import { useNavigate } from "react-router-dom";
 import {Boton,Input,ContenedorBoton,Titulo,ContenedorHeader,Formulario} from './../elementos/elementos';
 
@@ -9,8 +9,8 @@ const InicioSesion=()=> {
 
   const [correo, establecerCorreo]= useState('');
   const [password, establecerPassword]= useState('');
-  //const [alerta, cambiarAlerta]= useState({});
-  //const [estadoAlerta, cambiarEstadoAlerta]= useState(false);
+  const [alerta, cambiarAlerta]= useState({});
+  const [estadoAlerta, cambiarEstadoAlerta]= useState(false);
   const navigate= useNavigate ();
   const handleChange=(e)=>{
     if (e.target.name=== 'email'){
@@ -23,7 +23,7 @@ const InicioSesion=()=> {
     e.preventDefault();
   
 
-  {/*const expresionRegular= /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
+  const expresionRegular= /[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+/;
   if (!expresionRegular.test(correo)){
     cambiarEstadoAlerta(true)
     cambiarAlerta({
@@ -60,7 +60,7 @@ const InicioSesion=()=> {
               break;
       }
       cambiarAlerta({tipo:'error', mensaje:{mensaje}});
-      }*/}
+      }
   }
   return (
 <>
@@ -91,11 +91,11 @@ const InicioSesion=()=> {
       <Boton as="button" primario type="submit">Iniciar Sesion</Boton>
       </ContenedorBoton>
     </Formulario>
-    {/*<Alerta 
+    {<Alerta 
     tipo={alerta.tipo}
             mensaje={alerta.mensaje}
             estadoAlerta={estadoAlerta}
-  cambiarEstadoAlerta={cambiarEstadoAlerta}/>*/}
+            cambiarEstadoAlerta={cambiarEstadoAlerta}/>}
     </>
   );
 }
