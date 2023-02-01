@@ -89,7 +89,7 @@ const RegistroUsuarios=()=> {
       <ContenedorHeader>
         <Titulo> Crear cuenta</Titulo>
         <div>
-        <Boton to="/">Ir al menu principal</Boton>
+        <Boton to="/IniciarSesion">Iniciar Sesion</Boton>
         </div>
         </ContenedorHeader>
     <Formulario onSubmit={handleSubmit}>
